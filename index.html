@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Métodos Numéricos</title>
+    <link
+      rel="stylesheet"
+      href="./css/styles.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11.3.1/lib/browser/math.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <h1>Métodos Numéricos</h1>
+    <select id="methodSelector">
+      <option value="newton">Newton-Raphson</option>
+      <option value="falsePosition">Falsa Posición</option>
+      <option value="bisection">Bisección</option>
+      <option value="secant">Secante</option>
+    </select>
+    <div id="inputArea"></div>
+    <div id="outputTable"></div>
+    <div id="outputGraph"></div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/methods.js"></script>
+  </body>
+</html>

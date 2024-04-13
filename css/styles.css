@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #444;
+    text-align: center;
+}
+
+#inputArea {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#outputGraph {
+    margin-top: 40px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12px" height="12px" viewBox="0 0 4 5" xmlns="http://www.w3.org/2000/svg" version="1.1"><polygon points="2,0 0,5 4,5" style="fill: #444;" /></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+select:hover {
+    border-color: #bbb;
+}
+
+/* Estilo adicional para responsividad */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        max-width: none;
+    }
+    input, select, button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
