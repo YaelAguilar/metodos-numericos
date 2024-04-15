@@ -215,13 +215,18 @@ function displayResults(results, method) {
 }
 
 function drawGraph(func) {
-    // Genera puntos para la función en un rango
-    const xValues = math.range(-10, 10, 0.1).toArray();
-    const yValues = xValues.map(function(x) {
-        return func.evaluate({ x: x });
-    });
+    const xMin = -2, xMax = 2;
+    const xStep = 0.01;
 
-    // Datos para la gráfica
+    const xValues = math.range(xMin, xMax, xStep).toArray();
+    const yValues = xValues.map(x => func.evaluate({ x }));
+
+    let yMin = Math.min(...yValues);
+    let yMax = Math.max(...yValues);
+    const yPadding = (yMax - yMin) * 0.1;
+    yMin -= yPadding;
+    yMax += yPadding;
+
     const trace = {
         x: xValues,
         y: yValues,
@@ -231,9 +236,11 @@ function drawGraph(func) {
 
     const layout = {
         title: 'Gráfica de f(x)',
-        xaxis: { title: 'x' },
-        yaxis: { title: 'f(x)' }
+        xaxis: { title: 'x', range: [xMin, xMax] },
+        yaxis: { title: 'f(x)', range: [yMin, yMax], autorange: false }
     };
 
     Plotly.newPlot('outputGraph', [trace], layout);
 }
+
+
