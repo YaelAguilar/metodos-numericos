@@ -215,7 +215,7 @@ function displayResults(results, method) {
 }
 
 function drawGraph(func) {
-    const xMin = -2, xMax = 2;
+    const xMin = -20, xMax = 20;
     const xStep = 0.01;
 
     const xValues = math.range(xMin, xMax, xStep).toArray();
