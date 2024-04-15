@@ -1,10 +1,14 @@
-function calculateNewton(f, derivative, initialGuess) {
+function calculateNewton(f, initialGuess) {
     const results = [];
     let x = initialGuess;
     let fx, dfx, xPrev, error;
 
     const func = math.compile(f);
+    const derivative = math.derivative(f, 'x').toString();
     const deriv = math.compile(derivative);
+
+    // Actualiza el campo de derivada automáticamente
+    document.getElementById('derivativeInput').value = derivative;
 
     // Iterar hasta que se cumplan los criterios de parada
     do {

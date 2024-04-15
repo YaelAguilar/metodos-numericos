@@ -13,7 +13,7 @@ function setupInputs(method) {
     let html = `<input type="text" id="functionInput" placeholder="Ingrese la función f(x)">`;
 
     if (method === 'newton') {
-        html += `<input type="text" id="derivativeInput" placeholder="Ingrese la derivada f'(x)">
+        html += `<input type="text" id="derivativeInput" placeholder="Derivada f'(x)" readonly>
                  <input type="number" id="initialGuess" placeholder="Valor inicial">`;
     } else if (method === 'secant') {
         html += `<input type="number" id="initialGuess" placeholder="Primer valor inicial">
@@ -28,18 +28,16 @@ function setupInputs(method) {
     inputArea.innerHTML = html;
 }
 
-
 function calculate(method) {
     const f = document.getElementById('functionInput').value;
     const initialGuess = document.getElementById('initialGuess') ? parseFloat(document.getElementById('initialGuess').value) : null;
     const lowerBound = document.getElementById('lowerBound') ? parseFloat(document.getElementById('lowerBound').value) : null;
     const upperBound = document.getElementById('upperBound') ? parseFloat(document.getElementById('upperBound').value) : null;
     const secondGuess = document.getElementById('secondGuess') ? parseFloat(document.getElementById('secondGuess').value) : null;
-    const derivative = method === 'newton' ? document.getElementById('derivativeInput').value : null;
 
     switch (method) {
         case 'newton':
-            calculateNewton(f, derivative, initialGuess);
+            calculateNewton(f, initialGuess);
             break;
         case 'falsePosition':
             calculateFalsePosition(f, lowerBound, upperBound);
